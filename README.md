@@ -2,6 +2,9 @@
 
 Este é um projeto de **Authenticator em Duas Etapas (2FA)** desenvolvido em **PHP puro**, utilizando as bibliotecas do **Google Authenticator** para gerar códigos temporários e autenticação segura. O objetivo é adicionar uma camada extra de segurança no processo de login, validando a identidade do usuário com um código temporário gerado a cada login, além da senha.
 
+![Screenshot_1](https://github.com/user-attachments/assets/8f61edde-2740-4cea-b284-fef018a5d4ff)
+
+
 ## Funcionalidades
 
 - **Geração de códigos temporários**: Gera códigos de 6 dígitos válidos por um tempo limitado.
