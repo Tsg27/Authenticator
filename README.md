@@ -24,5 +24,5 @@ Este é um projeto de **Authenticator em Duas Etapas (2FA)** desenvolvido em **P
 
 Clone o repositório para sua máquina local:
 ```bash
-git clone https://github.com/Tsg27/Athenticator.git
+git clone https://github.com/Tsg27/Authenticator.git
 cd Athenticator
