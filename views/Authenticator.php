@@ -22,7 +22,7 @@ require_once __DIR__ . '/../ConfigToken.php';
         <button type="submit" class="confimation">Confirmar</button>
 
         <p class="token-question">
-        <img src="../views/img/circle-question-solid.svg" style="margin: 0px 13px -2px 0px; height: 1em;">
+        <img src="../views/img/circle-question-solid.svg" style="margin: 0px 4px -2px 0px; height: 1em;">
         Você não tem token? <a href="registertoken.php">Cadastre-se</a>.
         </p>
 
