@@ -13,7 +13,7 @@ Este é um projeto de **Authenticator em Duas Etapas (2FA)** desenvolvido em **P
 
 - **Backend**: PHP (sem dependências externas, código puro)
 - **Bibliotecas**: 
-  - [Sonata Project Google Authenticator](https://github.com/sonata-project/google-authenticator)
+  - [Sonata Project Google Authenticator]
     - `GoogleAuthenticator.php` - Para a criação dos códigos temporários (TOTP).
     - `GoogleQrUrl.php` - Para gerar o link do código QR que pode ser escaneado pelo aplicativo Google Authenticator.
     - `FixedBitNotation.php` e `GoogleAuthenticatorInterface.php` - Para a implementação interna de funcionalidades relacionadas ao algoritmo de autenticação.
