@@ -21,11 +21,6 @@ Este é um projeto de **Authenticator em Duas Etapas (2FA)** desenvolvido em **P
     - `GoogleQrUrl.php` - Para gerar o link do código QR que pode ser escaneado pelo aplicativo Google Authenticator.
     - `FixedBitNotation.php` e `GoogleAuthenticatorInterface.php` - Para a implementação interna de funcionalidades relacionadas ao algoritmo de autenticação.
   
-## Como Instalar
+---
 
-### 1. Clone o Repositório
 
-Clone o repositório para sua máquina local:
-```bash
-git clone https://github.com/Tsg27/Authenticator.git
-cd Athenticator
