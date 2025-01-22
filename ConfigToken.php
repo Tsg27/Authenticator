@@ -1,6 +1,8 @@
 <?php
-
 session_start();
+require_once __DIR__ . '/../Authenticator/config/verify_csrf.php';
+
+
 // Gerar token CSRF se ainda não estiver definido
 if (empty($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
@@ -10,8 +12,6 @@ include_once('vendor/sonata-project/google-authenticator/src/FixedBitNotation.ph
 include_once('vendor/sonata-project/google-authenticator/src/GoogleAuthenticatorInterface.php');
 include_once('vendor/sonata-project/google-authenticator/src/GoogleAuthenticator.php');
 include_once('vendor/sonata-project/google-authenticator/src/GoogleQrUrl.php');
-
-// Utilize o autoloader do Composer se a biblioteca for instalada via Composer
 require 'vendor/autoload.php';
 
 
@@ -28,25 +28,43 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && empty($_SESSION['csrf_token'])) {
 
 // Verificar se o token foi enviado e validar o CSRF
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    header('Content-Type: application/json'); // Definir o tipo de resposta como JSON
+
     if ($_POST['csrf_token'] !== $_SESSION['csrf_token']) {
-        die('Token CSRF inválido');
+        echo json_encode([
+            'type' => 'error',
+            'title' => 'Erro',
+            'message' => 'Token CSRF inválido'
+        ]);
+        die();
     }
 
     $token = $_POST['token'];
 
     // Validar se o token é numérico
     if (!ctype_digit($token)) {
-        $message = 'Token inválido';
+        $response = [
+            'type' => 'error',
+            'title' => 'Erro',
+            'message' => 'Token inválido'
+        ];
     } else if ($g->checkCode($secret, $token)) {
-        $message = 'Autenticação Aprovada!';
+        // Caso o código seja validado com sucesso
+        $response = [
+            'type' => 'success',
+            'title' => 'Autenticação Aprovada!',
+            'message' => 'Token validado com sucesso.'
+        ];
     } else {
-        $message = 'Token inválido';
+        // Caso o código seja inválido
+        $response = [
+            'type' => 'error',
+            'title' => 'Erro',
+            'message' => 'Token inválido'
+        ];
     }
 
-    echo "<script>
-            alert('$message');
-            window.location.href = window.location.href;
-          </script>";
+    echo json_encode($response);
     die();
 }
 

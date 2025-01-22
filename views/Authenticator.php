@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../ConfigToken.php';
+$_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -12,10 +13,10 @@ require_once __DIR__ . '/../ConfigToken.php';
 </head>
 
 <body>
-    <form method="POST">
-        <h4>Verificação em duas etapas</h4>
-
-        <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
+<form method="POST" action="/ConfigToken.php" id="tokenForm">
+    <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>" autocomplete="off">
+    
+    <h4>Verificação em duas etapas</h4>
         <p for="token">Abra o aplicativo <strong>Authenticator</strong> em seu celular e digite abaixo o código gerado.</p>
         <input type="text" name="token" placeholder="Código de acesso" maxlength="6" required oninput="this.value = this.value.replace(/[^0-9]/g, '');">
 
@@ -27,5 +28,7 @@ require_once __DIR__ . '/../ConfigToken.php';
         </p>
 
     </form>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.20/dist/sweetalert2.all.min.js"></script>
+    <script src="../views/js/SweetAlert.js"></script>
 </html>
