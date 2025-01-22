@@ -9,13 +9,13 @@ $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../views/css/style.css">
-    <title>Google Auth</title>
+    <title>Authenticator-2FA</title>
 </head>
 
 <body>
 <form method="POST" action="/ConfigToken.php" id="tokenForm">
     <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>" autocomplete="off">
-    
+
     <h4>Verificação em duas etapas</h4>
         <p for="token">Abra o aplicativo <strong>Authenticator</strong> em seu celular e digite abaixo o código gerado.</p>
         <input type="text" name="token" placeholder="Código de acesso" maxlength="6" required oninput="this.value = this.value.replace(/[^0-9]/g, '');">

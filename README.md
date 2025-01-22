@@ -2,6 +2,9 @@
 
 Este é um projeto de **Authenticator em Duas Etapas (2FA)** desenvolvido em **PHP puro**, utilizando as bibliotecas do **Google Authenticator** para gerar códigos temporários e autenticação segura. O objetivo é adicionar uma camada extra de segurança no processo de login, validando a identidade do usuário com um código temporário gerado a cada login, além da senha.
 
+![Screenshot_1](https://github.com/user-attachments/assets/8f61edde-2740-4cea-b284-fef018a5d4ff)
+
+
 ## Funcionalidades
 
 - **Geração de códigos temporários**: Gera códigos de 6 dígitos válidos por um tempo limitado.
@@ -18,11 +21,6 @@ Este é um projeto de **Authenticator em Duas Etapas (2FA)** desenvolvido em **P
     - `GoogleQrUrl.php` - Para gerar o link do código QR que pode ser escaneado pelo aplicativo Google Authenticator.
     - `FixedBitNotation.php` e `GoogleAuthenticatorInterface.php` - Para a implementação interna de funcionalidades relacionadas ao algoritmo de autenticação.
   
-## Como Instalar
+--=
 
-### 1. Clone o Repositório
 
-Clone o repositório para sua máquina local:
-```bash
-git clone https://github.com/Tsg27/Authenticator.git
-cd Athenticator
