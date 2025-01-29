@@ -21,6 +21,19 @@ Este é um projeto de **Authenticator em Duas Etapas (2FA)** desenvolvido em **P
     - `GoogleQrUrl.php` - Para gerar o link do código QR que pode ser escaneado pelo aplicativo Google Authenticator.
     - `FixedBitNotation.php` e `GoogleAuthenticatorInterface.php` - Para a implementação interna de funcionalidades relacionadas ao algoritmo de autenticação.
   
---=
+##
+
+## Autores
+
+- [Tiago Soares da Conceição](https://www.linkedin.com/in/tsgo27/)
+
+
+
+---
+
+## Licença
+Copyright © 2025 Demo.
+
+Este projeto é licenciado [MIT](https://choosealicense.com/licenses/mit/)
 
 
